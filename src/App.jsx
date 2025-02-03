@@ -2,14 +2,15 @@ import { useEffect, useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 
 const App = () => {
-  const colours = [
-    '#5f4e91',
-    '#c8b6ff',
-    '#937adc',
-    '#9370DB',
-    '#806ac3',
-    '#8c69f5',
-  ];
+  const colours = ['purple', 'green', 'yellow', 'red', 'blue', 'pink'];
+  // const colours = [
+  //   '#5f4e91',
+  //   '#c8b6ff',
+  //   '#937adc',
+  //   '#9370DB',
+  //   '#806ac3',
+  //   '#8c69f5',
+  // ];
   const [score, setScore] = useState(0);
   const [message, setMessage] = useState('Guess the correct colour!');
   const [targetColour, setTargetColour] = useState('');
