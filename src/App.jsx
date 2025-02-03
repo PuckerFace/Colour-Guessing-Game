@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 
 const App = () => {
   const colours = [
@@ -37,32 +38,42 @@ const App = () => {
       setScore((score) => score + 1);
       setIsCorrect(true);
       setAnimation('bounce');
+      toast.success('Correct!');
     } else {
       setMessage('Try Again!, Guess the correct colour!');
       setIsCorrect(false);
       setAnimation('fade-out');
+      toast.error('Wrong!');
     }
 
     setTimeout(() => {
       setAnimation('');
     }, 500);
 
-    const newRounds = rounds + 1;
-    setRounds(newRounds);
-
-    if (newRounds === 5) {
-      setMessage('Game over! Restart to play again.');
-      setGameOver(true);
-      setHighScore(Math.max(highScore, score));
-    } else {
-      const randomColour = colours[Math.floor(Math.random() * colours.length)];
-      setTargetColour(randomColour);
-    }
+    setRounds((prevRounds) => prevRounds + 1);
   };
 
   useEffect(() => {
     colourGame();
   }, []);
+
+  useEffect(() => {
+    if (rounds === 5) {
+      setGameOver(true);
+      setMessage('Game over! Restart to play again.');
+      setHighScore((prevHighScore) => Math.max(prevHighScore, score));
+
+      if (score >= 5) {
+        toast.success('Game Over! You won!');
+      } else {
+        toast.error('Game Over! You lost!');
+      }
+    } else if (rounds < 5) {
+      // Set a new target colour if the game is still ongoing
+      const randomColour = colours[Math.floor(Math.random() * colours.length)];
+      setTargetColour(randomColour);
+    }
+  }, [rounds, score]); // Run when `newRounds` or `score` changes
 
   return (
     <section>
@@ -130,6 +141,7 @@ const App = () => {
               New Game
             </button>
           </div>
+          <ToastContainer />
         </div>
       </div>
     </section>
