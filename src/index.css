@@ -2,16 +2,16 @@
   --bg: #f1f2f6;
   --box-bg: #f8f8ff;
   --primary: #c8b6ff;
-  --primary: #886cde;
+  --secondary: #886cde;
   --gradient: linear-gradient(to right, #ccccff, #e7c6ff, #c8b6ff);
   --button: #9c85e3;
 }
 /*  '#FF4500',
-    '#FFBF00',
-    '#6495ED',
-    '#9370DB',
-    '#9FE2BF',
-    '#FFB6C1', */
+      '#FFBF00',
+      '#6495ED',
+      '#9370DB',
+      '#9FE2BF',
+      '#FFB6C1', */
 body,
 html {
   min-height: 100dvh;
@@ -85,6 +85,7 @@ button {
   background: var(--gradient);
   border-radius: 25px;
   border: 2px solid var(--button);
+  color: var(--secondary);
 }
 
 .new-game:hover {
@@ -96,7 +97,7 @@ button {
   display: flex;
   gap: 30px;
   justify-content: space-around;
-
+  color: var(--secondary);
   align-items: center;
   text-align: center;
   font-size: 1.2rem;
@@ -108,14 +109,14 @@ button {
   gap: 20px;
 }
 /* .status-box,
-.score-box,
-.highScore-box,
-.round-box {
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+  .score-box,
+  .highScore-box,
+  .round-box {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
 .score-box p {
   border: 2px solid var(--primary);
   padding: 10px 20px;
@@ -205,5 +206,13 @@ button {
   }
   .color-option {
     width: 110px;
+  }
+  .new-game {
+    width: 100%;
+    padding: 10px 40px;
+    font-size: 1rem;
+  }
+  .new-game-box {
+    display: block;
   }
 }
