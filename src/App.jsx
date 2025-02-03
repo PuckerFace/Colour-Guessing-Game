@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 
 const App = () => {
   const colours = [
-    '#9c85e3',
+    '#5f4e91',
     '#c8b6ff',
     '#937adc',
     '#9370DB',
     '#806ac3',
-    '#886cde',
+    '#8c69f5',
   ];
   const [score, setScore] = useState(0);
   const [message, setMessage] = useState('Guess the correct colour!');
