@@ -141,7 +141,7 @@ const App = () => {
               New Game
             </button>
           </div>
-          <ToastContainer />
+          <ToastContainer autoClose={1000} />
         </div>
       </div>
     </section>
