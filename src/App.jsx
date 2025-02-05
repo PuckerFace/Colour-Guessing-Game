@@ -11,7 +11,7 @@ const App = () => {
   ];
 
   const [score, setScore] = useState(0);
-  const [message, setMessage] = useState('Guess the correct colour!');
+
   const [targetColour, setTargetColour] = useState('');
   const [isCorrect, setIsCorrect] = useState(null);
   const [animation, setAnimation] = useState('');
@@ -23,21 +23,19 @@ const App = () => {
   const colourGame = () => {
     const randomColor = colours[Math.floor(Math.random() * colours.length)];
     setTargetColour(randomColor);
-    setMessage('Guess the correct colour!');
+
     setIsCorrect(null);
     setAnimation('');
   };
 
   const handleGame = (selectedColour) => {
     if (selectedColour === targetColour) {
-      setMessage('Colour Guessed Correctly');
       setScore((score) => score + 1);
       setIsCorrect(true);
       setAnimation('bounce');
       const randomColor = colours[Math.floor(Math.random() * colours.length)];
       setTargetColour(randomColor);
     } else {
-      setMessage('Try Again!, Guess the correct colour!');
       setIsCorrect(false);
       setAnimation('fade-out');
     }
@@ -53,7 +51,7 @@ const App = () => {
         <h1>Guess The Colour</h1>
 
         <p data-testid="gameInstructions" className="message">
-          {message}
+          Guess the correct colour!
         </p>
       </div>
 
