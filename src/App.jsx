@@ -1,14 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const App = () => {
-  const colours = [
-    '#FFBF00',
-    '#DE3163 ',
-    '#9FE2BF',
-    '#6495ED',
-    '#FF7F50',
-    '#CCCCFF',
-  ];
+  const colours = ['orange', 'blue ', 'pink', 'green', 'purple', 'crimson'];
 
   const [score, setScore] = useState(0);
 
