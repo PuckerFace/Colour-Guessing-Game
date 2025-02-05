@@ -16,7 +16,7 @@ const App = () => {
   const colourGame = () => {
     const randomColor = colours[Math.floor(Math.random() * colours.length)];
     setTargetColour(randomColor);
-
+    setScore(0);
     setIsCorrect(null);
     setAnimation('');
   };
